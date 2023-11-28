@@ -1,0 +1,404 @@
+//Create EMI rows
+
+{
+  "n_UNIT_ID": 2,
+  "v_RATE_OF_INTEREST": 12,
+  "v_PRINCIPAL_AMOUNT": 120000,
+  "v_PAYMENT_PERIOD_IN_YEARS": 1,
+  "emi_START_DATE": "2023-01-01",
+  "n_INITIAL_DEPOSIT" : 5000,
+  "n_INITIAL_DEPOSIT_PAID" : 4000,
+  "n_INITIAL_DEPOSIT_TO_BE_PAID": 1000
+}
+
+//Create/Update Collection rows
+
+{
+  "n_UNIT_ID": 3,
+  "month": "2023-04-15",
+  "monthnyear": "2023-04",
+  "n_EMI_COL": 0,
+  "n_INITIAL_DEPOSIT_COL": 0,
+  "n_ARREAR_COL": 0,
+  "n_PENAL_INTEREST_COL": 10,
+  "n_INITIAL_DEPOSIT_PI_COL": 10
+}
+
+//Demand rows
+
+{
+  "n_UNIT_ID": 3,
+  "month": "2023-04-15"
+}
+
+//Balance
+
+{
+  "month": "2023-04-15"
+}
+
+
+
+
+
+
+api/onholdregister   - POST
+
+{
+    "firstname":"Tin",
+    "lastname" :"Gun",
+    "username":"yazhini@bocxy.com",
+    "email":"yazhini@bocxy.com",
+    "password":"12345",
+    "phonenumber":"98765432110"
+}
+
+
+Response -  Please check OTP in Email
+
+-------------------------------------------------------------------------------
+
+api/verify-otp    -  POST
+
+{
+"email" : "yazhini@bocxy.com",
+"otp":""12345
+}
+
+Response -  {
+    "id": 4,
+    "firstname": "Tin",
+    "lastname": "Gun",
+    "password": "$2a$10$nB2uZAPMFcqLnJhA30o1dePlfcAVJpHSDb10w/8EdM4ogUny46t/.",
+    "phonenumber": "98765432110",
+    "email": "yazhini@bocxy.com",
+    "otp": "090233",
+    "loggedin": null,
+    "username": "yazhini@bocxy.com"
+}
+
+---------------------------------------------------------------------------------
+
+IF OTP CORRECT CALL BELOW  API IN UI
+
+api/register   - POST
+
+{
+    "firstname":"Tin",
+    "lastname" :"Gun",
+    "username":"yazhini@bocxy.com",
+    "email":"yazhini@bocxy.com",
+    "password":"12345",
+    "phonenumber":"98765432110"
+}
+
+
+Response -  "User Registered Successfully"
+
+
+----------------------------------------------------------------------------------
+
+
+/api/login          -  POST
+
+{ 
+"username" : "yazhini@bocxy.com",
+"password" : "12345"
+}
+
+
+RESPONSE -
+
+{
+    "token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ5YXpoaW5pIiwiaWF0IjoxNjk2NTE3NTQ3LCJleHAiOjE2OTY2MDM5NDd9.6m0l6VpkICRVLn_U6aX3iaVRv-bWCAnmcNVNafyC0NG-cNTZ6uwyL5oWWOgtFqY-Wj3BQp26a764RKi9PJqpCw",
+    "type": "Bearer",
+    "id": 2,
+    "firstname": "Forth",
+    "lastname": "Beam",
+    "email": "yazhini1@bocxy.com",
+    "phonenumber": "98765432110",
+    "loggedin": "2",
+    "username": "yazhini@bocxy.com"
+}
+
+
+//Customer application save
+
+/saveCustomerApplication
+
+{
+  "customerid": 12345,
+  "applicationNo": "APP123",
+  "date": "2023-10-06",
+  "division": "Division A",
+  "reservationOrNonReservation": "Reservation",
+  "status": "Approved",
+  "unitAccountNo": "U-12345",
+  "unitType": "Single Bedroom",
+  "modeOfAllotment": "Online",
+  "cityRural": "City",
+  "circle": "Circle 1",
+  "scheme": "Scheme A",
+  "type": "Type A",
+  "blockNo": "Block 1",
+  "floorNo": "1",
+  "flatNo": "101",
+  "unitNo": "U101",
+  "plotUdsArea": "1000 sq. ft.",
+  "plinthArea": "800 sq. ft.",
+  "reservationCategory": "General",
+  "priorityBasis": "Basis 1",
+  "costOfUnit": "100000.0",
+  "applicantName": "John Doe",
+  "dateOfBirth": "1990-01-01",
+  "age": "33",
+  "jointApplicantName": "Jane Doe",
+  "jointApplicantDOB": "1995-02-15",
+  "jointApplicantAge": 28,
+  "applicantSpouseName": "Spouse Name",
+  "fatherName": "Father Name",
+  "mobileNumber": "1234567890",
+  "emailId": "johndoe@example.com",
+  "aadhaarNumber": "1234 5678 9012",
+  "panNumber": "ABCDE1234F",
+  "correspondenceAddress": "123 Main Street, City",
+  "permanentAddress": "456 Elm Street, Suburb",
+  "applicantMonthlyIncome": "5000.0",
+  "spouseMonthlyIncome": "4000.0",
+  "totalMonthlyIncome": "9000.0",
+  "bankName": "Bank of XYZ",
+  "accountNumber": 9876543210,
+  "ifscCode": "XYZ1234567",
+  "accountHolderName": "John Doe",
+  "nativeOfTamilnadu": null,
+  "birthCertificate": null,
+  "aadhaarProof": null,
+  "panProof": null,
+  "incomeCertificate": null,
+  "reservationCategoryProof": null,
+  "reservationSubCategoryProof": null,
+  "signature": null,
+  "photo": null,
+  "nativeOfTamilnadu_filename": null,
+  "nativeOfTamilnadu_filepath": null,
+  "birthCertificate_filename": null,
+  "birthCertificate_filepath": null,
+  "aadhaarProof_filename": null,
+  "aadhaarProof_filepath": null,
+  "panProof_filename": null,
+  "panProof_filepath": null,
+  "incomeCertificate_filename": null,
+  "incomeCertificate_filepath": null,
+  "reservationCategoryProof_filename": null,
+  "reservationCategoryProof_filepath": null,
+  "reservationSubCategoryProof_filename": null,
+  "reservationSubCategoryProof_filepath": null,
+  "signature_filename": null,
+  "signature_filepath": null,
+  "photo_filename": null,
+  "photo_filepath": null,
+  "jointApplicantAadhar": "123364899",
+  "jointApplicantFathername": "Nathan",
+  "applicationFee": 100,
+  "registrationFee":50,
+  "amountPaid":10000,
+  "unitNId": 1,
+  "schemeNId":1
+}
+
+
+GET APPLICATIONS LIST OF SINGLE CUSTOMER
+
+/getCustomerApp
+{
+"id":"12345"
+}
+
+//Get Single Application for Customer
+
+/getByIdCustomerApp/{id}
+
+
+//Customer Approve/Reject
+
+/saveCustomerApplication    WITH n_ID Value
+
+
+
+//Get Schemes List from Applications for Admin
+
+/getAllSchemeWithApplication
+
+
+//Get all Applications Of One Scheme
+/getAllApplicationsOfOneScheme
+
+{
+  "scheme": "Scheme1"
+}
+
+
+//Category List Count Increment/Decrement
+
+/getCategoryWiseUnsold
+{
+
+  "schemeId"   : 111,
+  "unitId" : 2,
+  "category" : "General Public",
+  "subcategory" : "Political Sufferers",
+  "status" : "reject",
+  "reservation" : "NO"
+
+}
+
+
+//Block/Floor Booking
+/getBlockFloorUnitDetails
+
+{
+  "schemeId":24
+}
+
+//Block/Floor Booking All Scheme
+/getBlockFloorUnitAllSchemes
+{
+  "id":1
+}
+
+
+
+
+//CAllottee Get by Unit ID RESPONSE
+"data": {
+"customerid": 1003,
+"applicationNo": "APP-003",
+"date": "2023-11-03",
+"unitAccountNo": "B-2003",
+"unitType": "3BHK",
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"modeOfAllotment": "Direct Allotment",
+"cityRural": "Rural",
+"circle": "Small Town",
+"scheme": "Scheme B",
+"type": "Villa",
+"blockNo": "Block C",
+"floorNo": "5",
+"flatNo": "C301",
+"unitNo": "103",
+"plotUdsArea": "650 sq. ft.",
+"plinthArea": "1300 sq. ft.",
+"reservationCategory": "Reserved",
+"priorityBasis": "Reserved",
+"costOfUnit": 190000.0,
+"division": "East Division",
+"reservationOrNonReservation": "Non-Reservation",
+"status": "Pending",
+"applicantName": "Robert Johnson",
+"dateOfBirth": "1992-11-28",
+"age": 30,
+"applicantSpouseName": "Emily Johnson",
+"applicantFathersName": "Robert's Father",
+"jointApplicantName": "Emily Johnson",
+"jointApplicantDOB": "1994-05-22",
+"jointApplicantAge": 29,
+"jointApplicantSpouseName": "Robert's Spouse",
+"jointApplicantFathername": "Emily's Father",
+"mobileNumber": "345-678-9012",
+"emailId": "robertjohnson@email.com",
+"aadhaarNumber": "3456789012",
+"panNumber": "HIJK1234K",
+"correspondenceAddress": "567 Meadow St, Countryside",
+"permanentAddress": "456 Park Rd, City Area",
+"applicantMonthlyIncome": 5800.0,
+"spouseMonthlyIncome": 4200.0,
+"totalMonthlyIncome": 5300.0,
+"bankName": "Bank of PQR",
+"accountNumber": 3456789,
+"ifscCode": "PQR234567",
+"accountHolderName": "Robert Johnson",
+"applicationFee": 590.0,
+"registrationFee": 1300.0,
+"amountPaid": 9900.0,
+"unitNId": 21,
+"schemeNId": 3,
+"categoryCode": 3,
+"subCategoryCode": 2,
+"nativeOfTamilnadu": null,
+"birthCertificate": null,
+"aadhaarProof": null,
+"panProof": null,
+"incomeCertificate": null,
+"reservationCategoryProof": null,
+"reservationSubCategoryProof": null,
+"signature": null,
+"jointApplSign": null,
+"photo": null,
+"nativeOfTamilnadu_filepath": "path/to/native_proof3.pdf",
+"birthCertificate_filepath": "path/to/birth_cert3.pdf",
+"aadhaarProof_filepath": "path/to/aadhaar_proof3.pdf",
+"panProof_filepath": "path/to/pan_proof3.pdf",
+"incomeCertificate_filepath": "path/to/income_cert3.pdf",
+"reservationCategoryProof_filepath": "path/to/reservation_proof3.pdf",
+"reservationSubCategoryProof_filepath": "path/to/sub_category_proof3.pdf",
+"signature_filepath": "path/to/signature3.png",
+"jointApplSignFilePath": "path/to/joint_appl_sign3.png",
+"photo_filepath": "path/to/photo3.jpg",
+"application_upload_filepath": "path/to/app_upload3.pdf",
+"allotment_order_filename": "allotment_file3.docx",
+"allotment_order_filepath": "path/to/allotment_file3.docx",
+"lcs_agreement_filename": "lcs_agreement_file3.docx",
+"lcs_agreement_filepath": "path/to/lcs_agreement_file3.docx",
+"field_measurement_book_filename": "field_measurement_file3.docx",
+"field_measurement_book_filepath": "path/to/field_measurement_file3.docx",
+"handing_over_report_filename": "handover_report_file3.docx",
+"handing_over_report_filepath": "path/to/handover_report_file3.docx",
+"draft_sale_deed_filename": "sale_deed_file3.docx",
+"draft_sale_deed_filepath": "path/to/sale_deed_file3.docx",
+"a_b_loan_filename": "loan_file3.docx",
+"a_b_loan_filepath": "path/to/loan_file3.docx",
+"inPrincipalLetterForLoanFilename": "principal_letter_file3.docx",
+"inPrincipalLetterForLoanFilepath": "path/to/principal_letter_file3.docx",
+"nocFilename": "noc_file3.docx",
+"nocFilepath": "path/to/noc_file3.docx",
+"saleDeedRequisitionLetterFilename": "sale_deed_req_file3.docx",
+"saleDeedRequisitionLetterFilepath": "path/to/sale_deed_req_file3.docx",
+"n_ID": 3,
+"noc": null,
+"allotment_ORDER": null,
+"a_B_LOAN": null,
+"lcs_Agreement": null,
+"draft_SALE_DEED": null,
+"in_PRINCIPAL_LETTER_FOR_LOAN": null,
+"handing_OVER_REPORT": null,
+"field_MEASUREMENT_BOOK": null,
+"sale_DEED_REQUISITION_LETTER": null
+},
